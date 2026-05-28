@@ -1,0 +1,6 @@
+{
+  "name": "Nasir Electric Store",
+  "description": "58 Years of Trust. Premium solar energy solutions, custom electrical engineering, industrial equipment, and designer lighting systems to power Pakistan's future since 1968.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

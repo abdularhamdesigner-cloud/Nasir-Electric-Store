@@ -1,0 +1,63 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=Fira+Code:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "Fira Code", monospace;
+
+  /* Custom Clean Color Palette (Matches Shopify / Pro Store look exactly) */
+  --color-navy-dark: #FFFFFF; /* Pure White background default */
+  --color-navy-deep: #0D1B2A; /* For Dark blue elements like Stats & Hero */
+  --color-navy-muted: #E2E8F0; /* Clean borders and divider lines */
+  --color-cyan-electric: #F1C40F; /* Exact Sunny Yellow theme accent */
+  --color-gold-cream: #EAA814; /* Darker Gold yellow */
+  --color-gold-matte: #0D1B2A; /* Deep slate gray */
+  --color-charcoal: #1A202C; /* Text slate charcoal */
+  --color-warm-white: #FFFFFF; /* Pure white */
+}
+
+/* Custom Scrollbar for professional look */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F8F9FA;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #0D1B2A;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: #F8F9FA;
+  color: #1A202C;
+}
+
+body {
+  font-family: var(--font-sans);
+  overflow-x: hidden;
+  background-color: #F8F9FA;
+}
+
+/* Glassmorphism backgrounds replaced with tidy crisp white cards */
+.shop-card {
+  background: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  border-radius: 12px;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.shop-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.08), 0 4px 6px -2px rgba(0, 0, 0, 0.04);
+}
