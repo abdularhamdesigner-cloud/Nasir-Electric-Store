@@ -1,19 +1,20 @@
 import { useState, useEffect } from 'react';
 import { useApp } from '../context/AppContext';
-import { Menu, X, User, Home, Sun, Lightbulb, Phone, Star, ChevronRight } from 'lucide-react';
+import { Menu, X, User, Home, Sun, Lightbulb, Phone, Star, ChevronRight, Info } from 'lucide-react';
 import { motion, AnimatePresence } from 'motion/react';
 import Logo from './Logo';
 
 const navLinks = [
-  { label: 'About Store', view: 'home', category: 'all', icon: Home },
+  { label: 'Home', view: 'home', category: 'all', icon: Home },
   { label: 'Solar Panels', view: 'solar', icon: Sun },
   { label: 'Lighting', view: 'lighting', icon: Lightbulb },
+  { label: 'About Us', view: 'about', icon: Info },
   { label: 'Reviews', view: 'testimonials', icon: Star },
   { label: 'Contact', view: 'contact', icon: Phone },
 ];
 
 export default function Navbar() {
-  const { setSelectedCategory, currentView, setCurrentView } = useApp();
+  const { setSelectedCategory, currentView, setCurrentView, setActiveProductDetail } = useApp();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
   const [isScrolled, setIsScrolled] = useState(false);
@@ -30,6 +31,9 @@ export default function Navbar() {
     setCurrentView(view);
     if (category) {
       setSelectedCategory(category);
+    }
+    if (setActiveProductDetail) {
+      setActiveProductDetail(null);
     }
     setMobileMenuOpen(false);
     window.scrollTo({ top: 0, behavior: 'smooth' });

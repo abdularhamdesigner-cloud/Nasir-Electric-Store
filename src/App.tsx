@@ -6,14 +6,30 @@ import LightingShowcase from './components/LightingShowcase';
 import SolarSolutions from './components/SolarSolutions';
 import Testimonials from './components/Testimonials';
 import InquiryModal from './components/InquiryModal';
+import ProductDetailPage from './components/ProductDetailPage';
+import AboutStore from './components/AboutStore';
 import Footer from './components/Footer';
 import { motion, AnimatePresence } from 'motion/react';
-import { MapPin, Phone, Clock, ArrowRight, ExternalLink } from 'lucide-react';
+import { MapPin, Phone, Clock, ArrowRight, ExternalLink, Mail, MessageSquare } from 'lucide-react';
 
 function MainContent() {
-  const { currentView, setSelectedCategory, setCurrentView } = useApp();
+  const { currentView, setSelectedCategory, setCurrentView, activeProductDetail } = useApp();
 
   const renderView = () => {
+    if (activeProductDetail) {
+      return (
+        <motion.div
+          key="product-detail"
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0, scale: 0.98 }}
+          transition={{ duration: 0.22, ease: 'easeOut' }}
+        >
+          <ProductDetailPage />
+        </motion.div>
+      );
+    }
+
     switch (currentView) {
       case 'home':
         return (
@@ -111,12 +127,24 @@ function MainContent() {
                       About Nasir Electric Store
                     </h2>
                     <p className="text-slate-650 text-xs sm:text-sm leading-relaxed font-sans font-semibold">
-                      For over 58 years, Nasir Electric Store (M.E.S) has been the cornerstone of electrical quality and solar innovation in Mailsi, District Vehari. What started as a local family retail shop has evolved into a premier supply hub and certified energy contractor, illuminating domestic properties, heavy industrial sites, and modern off-grid agricultural farms across Punjab.
+                      For over 58 years, Nasir Electric Store (N.E.S) has been the cornerstone of electrical quality and solar innovation in Mailsi, District Vehari. What started as a local family retail shop has evolved into a premier supply hub and certified energy contractor, illuminating domestic properties, heavy industrial sites, and modern off-grid agricultural farms across Punjab.
                     </p>
                     <p className="text-slate-500 text-xs sm:text-sm leading-relaxed font-sans font-medium">
                       We strictly filter out dual-standard copies, delivering absolute brand authenticity in 99.9% pure copper cables, tier-1 solar cells, and high-lux architectural lights. Our reputation rests on genuine technical performance and uncompromised safety standards.
                     </p>
-                    <div className="flex flex-wrap gap-4 pt-2">
+                    <div className="pt-2">
+                      <button
+                        onClick={() => {
+                          setCurrentView('about');
+                          window.scrollTo({ top: 0, behavior: 'smooth' });
+                        }}
+                        className="bg-[#1E293B] hover:bg-[#F1C40F] text-white hover:text-slate-950 text-xs uppercase font-sans font-black tracking-widest px-5 py-3 rounded-xl cursor-pointer transition-all duration-300 shadow-sm flex items-center gap-1.5"
+                      >
+                        <span>Read Our Full Story</span>
+                        <ArrowRight className="w-3.5 h-3.5 text-current" />
+                      </button>
+                    </div>
+                    <div className="flex flex-wrap gap-4 pt-4 border-t border-slate-100">
                       <div className="flex items-center gap-2 text-xs font-bold text-[#EAA814]">
                         <span className="w-2.5 h-2.5 rounded-full bg-[#EAA814]/80 shrink-0" />
                         Mitru Road, Mailsi
@@ -218,6 +246,18 @@ function MainContent() {
             <Testimonials />
           </motion.div>
         );
+      case 'about':
+        return (
+          <motion.div
+            key="about"
+            initial={{ opacity: 0, y: 15 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: -15 }}
+            transition={{ duration: 0.28, ease: 'easeOut' }}
+          >
+            <AboutStore />
+          </motion.div>
+        );
       case 'contact':
         return (
           <motion.div
@@ -234,7 +274,7 @@ function MainContent() {
                   ESTABLISHED SINCE 1968
                 </span>
                 <h1 className="font-display font-black text-3xl sm:text-4xl text-slate-900 tracking-tight">
-                  Nasir Electric Store (M.E.S)
+                  Nasir Electric Store (N.E.S)
                 </h1>
                 <p className="text-sm text-slate-500 max-w-2xl mx-auto font-sans leading-relaxed">
                   Serving three generations of customers in Mailsi and South Punjab with absolute trust, authentic brand warranties, and customized solar & architectural lighting.
@@ -253,7 +293,7 @@ function MainContent() {
                 }}
                 initial="hidden"
                 animate="show"
-                className="grid grid-cols-1 md:grid-cols-3 gap-6 pt-6"
+                className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 pt-6"
               >
                 {/* Location Card */}
                 <motion.div
@@ -266,21 +306,21 @@ function MainContent() {
                   onClick={() => {
                     window.open('https://www.google.com/maps/search/?api=1&query=Nasir+Electric+Store+Mitru+Road+Mailsi', '_blank');
                   }}
-                  className="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-left flex flex-col justify-between gap-4 transition-all duration-305 hover:shadow-lg hover:border-[#F1C40F]/40 cursor-pointer group"
+                  className="p-6 bg-slate-50 border border-slate-205 rounded-2xl text-left flex flex-col justify-between gap-4 transition-all duration-305 hover:shadow-lg hover:border-[#F1C40F]/40 cursor-pointer group"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-[#F39C12]/10 flex items-center justify-center text-[#F39C12] transition-colors group-hover:bg-[#F39C12] group-hover:text-white shrink-0 shadow-xs">
-                        <MapPin className="w-4.5 h-4.5" />
+                      <div className="w-10 h-10 rounded-xl bg-[#F39C12]/10 flex items-center justify-center text-[#F39C12] transition-colors group-hover:bg-[#F39C12] group-hover:text-white shrink-0 shadow-xs">
+                        <MapPin className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-wider block">Address</span>
+                        <span className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-wider block">Main Showroom</span>
                         <h3 className="font-sans font-black text-xs text-slate-800 uppercase tracking-wider">Store Location</h3>
                       </div>
                     </div>
                     
-                    <p className="text-xs sm:text-[13px] text-slate-700 font-semibold font-sans leading-relaxed">
-                      Nasir Electric Store, Mitru Road, Mailsi, District Vehari, Punjab, Pakistan.
+                    <p className="text-xs sm:text-[13px] text-slate-705 font-bold font-sans leading-relaxed">
+                      Mitru Road, Near National Bank, Mailsi, District Vehari, Punjab.
                     </p>
                   </div>
 
@@ -300,21 +340,24 @@ function MainContent() {
                   onClick={() => {
                     window.open('tel:+923037985478', '_self');
                   }}
-                  className="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-left flex flex-col justify-between gap-4 transition-all duration-305 hover:shadow-lg hover:border-[#F1C40F]/40 cursor-pointer group"
+                  className="p-6 bg-slate-50 border border-slate-205 rounded-2xl text-left flex flex-col justify-between gap-4 transition-all duration-305 hover:shadow-lg hover:border-[#F1C40F]/40 cursor-pointer group"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-[#F39C12]/10 flex items-center justify-center text-[#F39C12] transition-colors group-hover:bg-[#F39C12] group-hover:text-white shrink-0 shadow-xs">
-                        <Phone className="w-4.5 h-4.5" />
+                      <div className="w-10 h-10 rounded-xl bg-[#F39C12]/10 flex items-center justify-center text-[#F39C12] transition-colors group-hover:bg-[#F39C12] group-hover:text-white shrink-0 shadow-xs">
+                        <Phone className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-wider block">Phone & WhatsApp Help</span>
-                        <h3 className="font-sans font-black text-xs text-slate-800 uppercase tracking-wider">Contact Number</h3>
+                        <span className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-wider block">Voice & Cellular</span>
+                        <h3 className="font-sans font-black text-xs text-slate-800 uppercase tracking-wider">Phone Number</h3>
                       </div>
                     </div>
                     
-                    <p className="text-sm sm:text-base text-slate-700 font-black font-sans tracking-wide leading-tight">
+                    <p className="text-sm font-black text-slate-800 font-sans tracking-wide leading-tight">
                       +92 303 7985478
+                    </p>
+                    <p className="text-[11px] text-slate-500 font-bold font-sans leading-relaxed">
+                      Call desk is open to assist with physical specifications, pricing, and stock status.
                     </p>
                   </div>
 
@@ -323,7 +366,7 @@ function MainContent() {
                   </span>
                 </motion.div>
 
-                {/* Hours Card */}
+                {/* WhatsApp Card */}
                 <motion.div
                   variants={{
                     hidden: { opacity: 0, y: 15 },
@@ -332,37 +375,85 @@ function MainContent() {
                   whileHover={{ scale: 1.02, y: -2 }}
                   whileTap={{ scale: 0.98 }}
                   onClick={() => {
-                    const whatsappUrl = `https://wa.me/923037985478?text=Hi%2C%20I'd%2520like%2520to%2520ask%2520about%2520your%2520products%2520or%2520store%2520hours.`;
+                    const whatsappUrl = `https://wa.me/923037985478?text=Assalamu%20Alaikum%20Nasir%20Electric%20Store%2C%20I'd%20like%20to%20inquire%20about%20your%20product%20catalog%20availability.`;
                     window.open(whatsappUrl, '_blank');
                   }}
-                  className="p-6 bg-slate-50 border border-slate-100 rounded-2xl text-left flex flex-col justify-between gap-4 transition-all duration-305 hover:shadow-lg hover:border-[#F1C40F]/40 cursor-pointer group"
+                  className="p-6 bg-slate-50 border border-slate-205 rounded-2xl text-left flex flex-col justify-between gap-4 transition-all duration-305 hover:shadow-lg hover:border-emerald-500/40 cursor-pointer group"
                 >
                   <div className="space-y-4">
                     <div className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-[#F39C12]/10 flex items-center justify-center text-[#F39C12] transition-colors group-hover:bg-[#F39C12] group-hover:text-white shrink-0 shadow-xs">
-                        <Clock className="w-4.5 h-4.5" />
+                      <div className="w-10 h-10 rounded-xl bg-emerald-100/30 flex items-center justify-center text-emerald-600 transition-colors group-hover:bg-emerald-500 group-hover:text-white shrink-0 shadow-xs">
+                        <MessageSquare className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className="text-[9px] font-mono text-slate-400 font-bold uppercase tracking-wider block">Hours</span>
-                        <h3 className="font-sans font-black text-xs text-slate-800 uppercase tracking-wider">Operating Hours</h3>
+                        <span className="text-[9px] font-mono text-emerald-600 font-bold uppercase tracking-wider block">Chat & Specs Desk</span>
+                        <h3 className="font-sans font-black text-xs text-slate-800 uppercase tracking-wider">WhatsApp Number</h3>
                       </div>
                     </div>
                     
-                    <div className="space-y-0.5">
-                      <p className="text-xs sm:text-[13px] text-slate-500 font-bold font-sans">
-                        Every Day (Mon – Sun)
-                      </p>
-                      <p className="text-xs sm:text-[13px] text-slate-750 font-black font-sans">
-                        09:00 AM – 08:00 PM
-                      </p>
+                    <p className="text-sm font-black text-slate-800 font-sans tracking-wide leading-tight">
+                      +92 303 7985478
+                    </p>
+                    <p className="text-[11px] text-slate-500 font-bold font-sans leading-relaxed">
+                      Send product snapshots or spec sheets to receive instant price computations.
+                    </p>
+                  </div>
+
+                  <span className="inline-flex items-center gap-1.5 text-xs font-bold text-emerald-600 mt-2 group-hover:underline">
+                    Inquire on WhatsApp <ArrowRight className="w-3.5 h-3.5" />
+                  </span>
+                </motion.div>
+
+                {/* Email Card */}
+                <motion.div
+                  variants={{
+                    hidden: { opacity: 0, y: 15 },
+                    show: { opacity: 1, y: 0 }
+                  }}
+                  whileHover={{ scale: 1.02, y: -2 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => {
+                    window.open('mailto:info@nasirelectricstore.com', '_self');
+                  }}
+                  className="p-6 bg-slate-50 border border-slate-205 rounded-2xl text-left flex flex-col justify-between gap-4 transition-all duration-305 hover:shadow-lg hover:border-[#F1C40F]/45 cursor-pointer group"
+                >
+                  <div className="space-y-4">
+                    <div className="flex items-center gap-3">
+                      <div className="w-10 h-10 rounded-xl bg-blue-100/30 flex items-center justify-center text-blue-600 transition-colors group-hover:bg-blue-600 group-hover:text-white shrink-0 shadow-xs">
+                        <Mail className="w-5 h-5" />
+                      </div>
+                      <div>
+                        <span className="text-[9px] font-mono text-blue-600 font-bold uppercase tracking-wider block">Corporate & Quotes</span>
+                        <h3 className="font-sans font-black text-xs text-slate-800 uppercase tracking-wider">Email Address</h3>
+                      </div>
                     </div>
+                    
+                    <p className="text-[11px] font-black text-slate-800 font-sans truncate tracking-tight leading-tight">
+                      info@nasirelectricstore.com
+                    </p>
+                    <p className="text-[11px] text-slate-500 font-bold font-sans leading-relaxed">
+                      For corporate inquiries, official quotation sheets, or heavy energy installations.
+                    </p>
                   </div>
 
                   <span className="inline-flex items-center gap-1.5 text-xs font-bold text-[#F39C12] mt-2 group-hover:underline">
-                    Inquire Store Details <ArrowRight className="w-3.5 h-3.5" />
+                    Send Mail Message <ArrowRight className="w-3.5 h-3.5" />
                   </span>
                 </motion.div>
               </motion.div>
+
+              {/* Polished Showroom Timing Alert Banner */}
+              <div className="flex flex-col sm:flex-row items-center justify-center gap-4 bg-slate-50 border border-slate-200/60 p-4.5 rounded-2xl text-left max-w-xl mx-auto">
+                <div className="w-9 h-9 rounded-xl bg-[#F39C12]/10 flex items-center justify-center text-[#F39C12] shrink-0">
+                  <Clock className="w-4.5 h-4.5" />
+                </div>
+                <div className="space-y-0.5 text-center sm:text-left">
+                  <span className="text-[10px] font-mono text-slate-400 font-extrabold uppercase tracking-widest block">Showroom Timing Policy</span>
+                  <p className="text-xs sm:text-[13px] text-slate-705 font-bold leading-relaxed">
+                    Open <strong className="text-slate-900 font-black">Every Single Day</strong> (Mon – Sun): <span className="text-[#EAA814] font-black font-mono">09:00 AM – 08:00 PM</span>
+                  </p>
+                </div>
+              </div>
 
               {/* Direct secure quoting panel */}
               <div className="p-8 bg-slate-900 text-white rounded-3xl text-left relative overflow-hidden shadow-xl mt-8">

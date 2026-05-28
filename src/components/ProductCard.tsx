@@ -44,9 +44,7 @@ export default function ProductCard({ product }: ProductCardProps) {
 
   const handleInquireNow = (e: React.MouseEvent) => {
     e.stopPropagation();
-    clearCart();
-    addToCart(product, 1);
-    setIsInquiryOpen(true);
+    setActiveProductDetail(product);
   };
 
   const renderCategoryIcon = () => {

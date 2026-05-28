@@ -3,12 +3,15 @@ import { Phone, MapPin, Mail, Clock, ArrowUp, Facebook, Youtube, Instagram, Mess
 import Logo from './Logo';
 
 export default function Footer() {
-  const { setSelectedCategory, setCurrentView } = useApp();
+  const { setSelectedCategory, setCurrentView, setActiveProductDetail } = useApp();
 
   const handleNavClick = (view: string, category?: string) => {
     setCurrentView(view);
     if (category) {
       setSelectedCategory(category);
+    }
+    if (setActiveProductDetail) {
+      setActiveProductDetail(null);
     }
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
@@ -71,6 +74,7 @@ export default function Footer() {
             <li><button onClick={() => handleNavClick('home')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Home</button></li>
             <li><button onClick={() => handleNavClick('solar')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Solar Systems</button></li>
             <li><button onClick={() => handleNavClick('lighting')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Lighting</button></li>
+            <li><button onClick={() => handleNavClick('about')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">About Us</button></li>
             <li><button onClick={() => handleNavClick('contact')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Contact Us</button></li>
           </ul>
         </div>
@@ -118,7 +122,7 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-6 py-5 flex flex-col sm:flex-row justify-between items-center gap-4 text-slate-500 text-xs">
           
           <div className="text-left">
-            © {currentYear} NASIR ELECTRIC STORE (M.E.S). 58 Years of Trust Since 1968.
+            © {currentYear} NASIR ELECTRIC STORE (N.E.S). 58 Years of Trust Since 1968.
           </div>
 
           <div className="flex items-center gap-6">

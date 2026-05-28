@@ -33,7 +33,7 @@ const SCROLLING_REVIEWS = [
   { name: 'Kashif Jamil', location: 'Mailsi', rating: 5, comment: 'Genuine dealership near Mitru Road. Cooperative sales team with premium service values.', date: 'May 17, 2026' },
   { name: 'Irfan Siddiqui', location: 'Lahore', rating: 5, comment: 'Ordered direct DC solar cables. Excellent thickness and heavy double XLPE coating.', date: 'May 04, 2026' },
   { name: 'Dr. Amna', location: 'Mailsi', rating: 5, comment: 'Polite consultation on modern home lighting setups. Recommended beautiful ambient layout designs.', date: 'April 25, 2026' },
-  { name: 'Engr. Waseem', location: 'Vehari', rating: 4, comment: 'Very rare to find brand-labeled Schneider circuit breakers in local grids. Glad MES stocks them.', date: 'May 13, 2026' },
+  { name: 'Engr. Waseem', location: 'Vehari', rating: 4, comment: 'Very rare to find brand-labeled Schneider circuit breakers in local grids. Glad NES stocks them.', date: 'May 13, 2026' },
   { name: 'Zulqarnain', location: 'Mailsi', rating: 5, comment: 'Robust WS2811 waterproof addressable pixel modules. Excellent festive light facades built.', date: 'May 22, 2026' },
   { name: 'Tanveer Malik', location: 'Multan', rating: 5, comment: 'Their 58-year history of absolute integrity is fully verified. Exceptional after-sale backing.', date: 'May 26, 2026' },
   { name: 'Aamer Sohail', location: 'Mailsi', rating: 4, comment: 'Our agricultural farms run completely on their heavy Jinko solar structures seamlessly.', date: 'May 28, 2026' },
@@ -137,7 +137,7 @@ export default function Testimonials() {
             What Our Verified Clients Say
           </h2>
           <p className="text-slate-600 text-xs sm:text-sm font-semibold max-w-lg mx-auto leading-relaxed">
-            Since 1968, Nasir Electric Store (M.E.S) has illuminated thousands of residences, shops, and farming tube-wells across Punjab with extreme honesty.
+            Since 1968, Nasir Electric Store (N.E.S) has illuminated thousands of residences, shops, and farming tube-wells across Punjab with extreme honesty.
           </p>
         </div>
 

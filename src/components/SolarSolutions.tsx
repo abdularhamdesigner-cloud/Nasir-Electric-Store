@@ -12,7 +12,7 @@ interface Appliance {
 }
 
 export default function SolarSolutions() {
-  const { addToCart, clearCart, setIsInquiryOpen } = useApp();
+  const { addToCart, clearCart, setIsInquiryOpen, setActiveProductDetail } = useApp();
   const [appliances, setAppliances] = useState<Appliance[]>([
     { id: 'fans', name: 'Ceiling Fans', watts: 75, qty: 5, label: '75W energy saver fan' },
     { id: 'ac', name: 'Inverter Air Conditioners (1.5 Ton)', watts: 1400, qty: 1, label: 'Modern eco inverter AC' },
@@ -116,9 +116,7 @@ export default function SolarSolutions() {
       stockStatus: 'In Stock' as const,
     };
 
-    clearCart();
-    addToCart(packageProduct, 1);
-    setIsInquiryOpen(true);
+    setActiveProductDetail(packageProduct);
   };
 
   const scrollSection = (id: string) => {
@@ -208,7 +206,7 @@ export default function SolarSolutions() {
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-4 text-left">
             <div className="space-y-1.5">
               <span className="text-[10px] font-mono text-[#F39C12] font-extrabold uppercase tracking-widest block bg-[#FAF9F6] border border-[#F1C40F]/10 px-3 py-1 rounded-full w-max">
-                M.E.S Certified Shop
+                N.E.S Certified Shop
               </span>
               <h3 className="font-sans font-black text-2xl sm:text-3.5xl text-slate-900 tracking-tight">
                 Buy Solar Materials & Components
@@ -348,9 +346,7 @@ export default function SolarSolutions() {
                     {/* Action button */}
                     <button
                       onClick={() => {
-                        clearCart();
-                        addToCart(product, 1);
-                        setIsInquiryOpen(true);
+                        setActiveProductDetail(product);
                       }}
                       className="w-full bg-[#1E293B] hover:bg-[#F1C40F] text-white hover:text-[#1E293B] font-sans font-black text-[10px] sm:text-xs py-2 sm:py-3 rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer shadow-md group-hover:shadow-lg"
                     >

@@ -4,7 +4,7 @@ import { Sparkles, Lightbulb, ShieldCheck, Zap, ArrowRight } from 'lucide-react'
 import { PRODUCTS } from '../data/products';
 
 export default function LightingShowcase() {
-  const { addToCart, clearCart, setIsInquiryOpen } = useApp();
+  const { addToCart, clearCart, setIsInquiryOpen, setActiveProductDetail } = useApp();
   const [lightingCategoryFilter, setLightingCategoryFilter] = useState<'all' | 'panel' | 'decor'>('all');
 
   // Filter products by lighting categories
@@ -33,7 +33,7 @@ export default function LightingShowcase() {
         <div className="text-center max-w-3xl mx-auto mb-12 sm:mb-16 space-y-4">
           <div className="inline-flex items-center gap-2 bg-yellow-500/10 border border-yellow-500/20 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold text-[#F1C40F] uppercase tracking-widest">
             <Sparkles className="w-3.5 h-3.5" />
-            M.E.S Signature Collection
+            N.E.S Signature Collection
           </div>
           <h2 className="font-display font-black text-3xl sm:text-5xl text-white tracking-tight">
             Premium Architectural & Commercial Lighting
@@ -165,9 +165,7 @@ export default function LightingShowcase() {
                 {/* Immediate Action button */}
                 <button
                   onClick={() => {
-                    clearCart();
-                    addToCart(product, 1);
-                    setIsInquiryOpen(true);
+                    setActiveProductDetail(product);
                   }}
                   className="w-full h-8 sm:h-10 bg-[#F1C40F] hover:bg-[#EAA814] text-slate-950 font-sans font-extrabold text-[10px] sm:text-xs py-1.5 sm:py-2.5 rounded-xl transition-all flex items-center justify-center gap-1 cursor-pointer shadow-md"
                 >

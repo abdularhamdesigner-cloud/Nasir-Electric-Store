@@ -33,7 +33,7 @@ export default function InquiryModal() {
     if (cart.length === 0) return;
 
     // Formatting string for WhatsApp pre-filled text
-    let message = `*M.E.S - NASIR ELECTRIC STORE*\n`;
+    let message = `*N.E.S - NASIR ELECTRIC STORE*\n`;
     message += `_Established since 1968 — 58 Years of Trust_\n`;
     message += `===============================\n\n`;
     message += `*CUSTOMER DETAILS:*\n`;
@@ -196,7 +196,7 @@ export default function InquiryModal() {
                               type="button"
                               onClick={() => {
                                 if (cart.length === 0) return;
-                                let message = `*M.E.S - NASIR ELECTRIC STORE*\n`;
+                                let message = `*N.E.S - NASIR ELECTRIC STORE*\n`;
                                 message += `_Established since 1968 — 58 Years of Trust_\n`;
                                 message += `===============================\n\n`;
                                 message += `*INSTANT WHATSAPP DIRECT PURCHASE:*\n`;
@@ -387,144 +387,6 @@ export default function InquiryModal() {
 
                 </form>
               )}
-            </motion.div>
-          </div>
-        )}
-      </AnimatePresence>
-
-      {/* Deep Product Details Inspectors Panel */}
-      <AnimatePresence>
-        {activeProductDetail && (
-          <div className="fixed inset-0 z-50 flex items-center justify-center p-4">
-            {/* Backdrop cover blur */}
-            <motion.div
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              exit={{ opacity: 0 }}
-              onClick={() => setActiveProductDetail(null)}
-              className="absolute inset-0 bg-slate-900/60 backdrop-blur-md"
-            />
-
-            <motion.div
-              initial={{ scale: 0.95, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              exit={{ scale: 0.95, opacity: 0 }}
-              transition={{ type: 'spring', damping: 25 }}
-              className="bg-white border border-slate-150 max-w-2xl w-full rounded-2xl overflow-hidden relative z-10 text-left shadow-2xl flex flex-col md:flex-row h-auto max-h-[90vh] overflow-hidden"
-            >
-              {/* Image Column */}
-              <div className="md:w-1/2 p-6 bg-slate-50 flex items-center justify-center relative border-b md:border-b-0 md:border-r border-slate-150">
-                <button
-                  onClick={() => setActiveProductDetail(null)}
-                  className="absolute top-4 left-4 p-1.5 rounded-lg bg-white border border-slate-200 hover:text-[#F39C12] text-slate-500 z-10 cursor-pointer"
-                >
-                  <X className="w-4.5 h-4.5" />
-                </button>
-
-                <img
-                  src={activeProductDetail.image}
-                  alt={activeProductDetail.name}
-                  className="max-h-[220px] md:max-h-[300px] object-contain p-2"
-                  referrerPolicy="no-referrer"
-                />
-              </div>
-
-              {/* Information Column */}
-              <div className="md:w-1/2 p-6 overflow-y-auto flex flex-col justify-between max-h-[50vh] md:max-h-none">
-                <div className="space-y-4">
-                  <div className="space-y-1.5 text-left">
-                    <span className="text-[9px] font-mono text-[#EAA814] uppercase bg-[#FAF9F6] border border-[#F1C40F]/10 px-2.5 py-0.5 rounded-full w-max block font-bold">
-                      {activeProductDetail.category.replace('-', ' ')}
-                    </span>
-                    <h3 className="font-sans font-black text-slate-900 text-lg leading-snug">
-                      {activeProductDetail.name}
-                    </h3>
-                  </div>
-
-                  {/* Core description */}
-                  <p className="text-slate-600 font-sans text-xs sm:text-[13px] leading-relaxed text-left font-medium">
-                    {activeProductDetail.description}
-                  </p>
-
-                  {/* Specifications Grid */}
-                  <div className="space-y-2 border-t border-slate-150 pt-4">
-                    <h4 className="font-sans font-extrabold text-[11px] text-slate-800 tracking-wide uppercase flex items-center gap-1.5 text-left">
-                      <FileText className="w-4 h-4 text-[#F39C12]" />
-                      Technical Specifications
-                    </h4>
-                    <div className="grid grid-cols-1 gap-1.5 text-[10px] font-mono">
-                      {Object.entries(activeProductDetail.specs).map(([key, value]) => (
-                        <div key={key} className="flex justify-between py-1 border-b border-slate-100">
-                          <span className="text-slate-400 uppercase block text-left">{key}</span>
-                          <span className="text-slate-700 font-extrabold block text-right">{value}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Warranty tags if exist */}
-                  {activeProductDetail.warranty && (
-                    <div className="p-3 rounded-lg bg-[#FAF9F6] border border-[#F1C40F]/10 flex items-center gap-2 justify-start">
-                      <Award className="w-4 h-4 text-[#F39C12] shrink-0" />
-                      <span className="text-[10px] font-sans text-slate-600 font-bold">
-                        ESTABLISHED WARRANTY: <strong className="text-slate-800">{activeProductDetail.warranty}</strong>
-                      </span>
-                    </div>
-                  )}
-                </div>
-
-                {/* Sub-tray actions */}
-                <div className="pt-6 border-t border-slate-150 flex flex-col sm:flex-row items-stretch sm:items-center justify-between mt-6 gap-3">
-                  <div className="text-left">
-                    <span className="text-[10px] font-mono text-slate-400 uppercase block font-bold">Rate:</span>
-                    <span className="font-sans font-black text-base md:text-lg text-slate-800">
-                      PKR {activeProductDetail.price.toLocaleString()}
-                    </span>
-                  </div>
-
-                  <div className="flex flex-col sm:flex-row items-stretch sm:items-center gap-2">
-                    {/* Instant Direct WhatsApp Order Link Option */}
-                    <button
-                      onClick={() => {
-                        let message = `*M.E.S - NASIR ELECTRIC STORE*\n`;
-                        message += `_Established since 1968 — 58 Years of Trust_\n`;
-                        message += `===============================\n\n`;
-                        message += `*DIRECT WHATSAPP INQUIRY:*\n`;
-                        message += `I'd like to buy/inquire about this item:\n\n`;
-                        message += `• *Product*: ${activeProductDetail.name}\n`;
-                        message += `• *Price*: PKR ${activeProductDetail.price.toLocaleString()}\n`;
-                        if (activeProductDetail.warranty) {
-                          message += `• *Warranty*: ${activeProductDetail.warranty}\n`;
-                        }
-                        message += `• *Details*:\n`;
-                        Object.entries(activeProductDetail.specs).forEach(([k, v]) => {
-                          message += `  - ${k}: ${v}\n`;
-                        });
-                        message += `\nIs this available at Mitru Road, Mailsi? Please direct me regarding purchase. Thanks!`;
-                        
-                        window.open(`https://wa.me/923037985478?text=${encodeURIComponent(message)}`, '_blank');
-                        setActiveProductDetail(null);
-                      }}
-                      className="bg-emerald-500 hover:bg-emerald-600 active:scale-95 text-white font-sans font-extrabold text-[11px] sm:text-xs tracking-wider uppercase px-4 py-2.5 sm:py-3 rounded-xl hover:shadow-md transition-all flex items-center justify-center gap-1.5 cursor-pointer"
-                    >
-                      <span className="text-sm">💬</span>
-                      <span>Buy via WhatsApp</span>
-                    </button>
-
-                    <button
-                      onClick={() => {
-                        clearCart();
-                        addToCart(activeProductDetail, 1);
-                        setActiveProductDetail(null);
-                        setIsInquiryOpen(true);
-                      }}
-                      className="bg-[#FAF9F6] border border-slate-200 hover:bg-slate-50 text-slate-700 font-sans font-extrabold text-[11px] sm:text-xs tracking-wider uppercase px-4 py-2.5 sm:py-3 rounded-xl transition-all flex items-center justify-center gap-1.5 cursor-pointer"
-                    >
-                      <span>Inquiry Form</span>
-                    </button>
-                  </div>
-                </div>
-              </div>
             </motion.div>
           </div>
         )}
