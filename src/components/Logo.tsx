@@ -61,13 +61,12 @@ export default function Logo({ className = '', size = 52 }: LogoProps) {
         opacity="0.9"
       />
 
-      {/* MES Styled Graphic */}
+      {/* NES Styled Graphic */}
       <g transform="translate(100, 115)">
-        {/* 'M' with slashing lightning bolt */}
-        <path d="M 0 85 L 20 15 L 42 55 L 48 40 L 40 85 Z" fill="#FFFFFF" />
-        <path d="M 42 55 L 60 15 L 80 85 H 62 L 53 45 L 43 85 Z" fill="#FFFFFF" />
+        {/* 'N' with slashing lightning bolt */}
+        <path d="M 0 85 L 0 15 H 18 L 54 62 L 54 15 H 74 L 74 85 H 56 L 20 38 L 20 85 Z" fill="#FFFFFF" />
         
-        {/* Lightning Bolt slashing across M */}
+        {/* Lightning Bolt slashing across N */}
         <path 
           d="M 68 -5 L 18 65 L 45 65 L 22 120 L 98 40 L 60 40 Z" 
           fill="#F1C40F" 
