@@ -181,28 +181,29 @@ export default function SolarSolutions() {
             </button>
           </div>
 
-          {/* Right graphics backdrop with actual premium on-grid residential solar photo styled as a clean background-removed PNG cutout */}
-          <div className="relative w-full md:w-[48%] h-[200px] sm:h-[260px] flex items-center justify-center z-10 shrink-0 select-none">
-            {/* Elegant transparent floating cutout representation (sky removed using masterclass shape polygon) */}
-            <div 
-              className="absolute inset-0 transition-transform hover:scale-[1.03] duration-500 ease-out"
-              style={{
-                filter: 'drop-shadow(0 20px 25px rgba(0,0,0,0.15)) drop-shadow(0 8px 10px rgba(0,0,0,0.1))',
-              }}
-            >
+          {/* Right graphics backdrop with actual premium on-grid residential solar photo adjusted flawlessly */}
+          <div className="relative w-full md:w-[48%] h-[220px] sm:h-[280px] flex items-center justify-center z-10 shrink-0 select-none">
+            {/* Elegant Premium Matte Frame with thick double border, soft vignette, and shadow */}
+            <div className="absolute inset-0 rounded-2xl overflow-hidden bg-slate-900 border-2 border-[#EAA814]/30 shadow-2xl transition-all duration-500 hover:scale-[1.02] hover:border-[#EAA814]/60 group">
               <img
                 src="https://i.ibb.co/s9LJh6C4/on-grid-solar-system-for-residential-use.jpg"
-                alt="On-grid Solar System for Residential Use Cutout"
-                className="w-full h-full object-cover transition-transform duration-700"
-                style={{
-                  clipPath: 'polygon(0% 45%, 48% 12%, 100% 32%, 100% 90%, 82% 100%, 0% 100%)',
-                }}
+                alt="On-grid Solar System for Residential Use"
+                className="w-full h-full object-cover opacity-95 transition-transform duration-700 group-hover:scale-105"
                 referrerPolicy="no-referrer"
               />
+              {/* Dynamic light lens flare and shadow gradient overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-slate-950/50 via-slate-900/10 to-transparent pointer-events-none" />
+              
+              {/* Technical Indicator Overlay Tag */}
+              <div className="absolute bottom-3 left-3 bg-slate-900/80 backdrop-blur-md px-2.5 py-1 rounded-md border border-white/10">
+                <p className="text-[9px] font-mono text-white tracking-widest leading-none font-bold uppercase">
+                  Nasir Residential On-Grid
+                </p>
+              </div>
             </div>
             
             {/* Sun sticker symbol of lightning badge strictly corresponding to photo */}
-            <div className="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-4 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg border-2 border-[#EAA814]/40 z-20">
+            <div className="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-4 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg border-2 border-[#EAA814]/40 z-20 hover:rotate-12 transition-transform duration-300">
               <Zap className="w-6 h-6 text-[#F1C40F] fill-[#F1C40F]" />
             </div>
           </div>
