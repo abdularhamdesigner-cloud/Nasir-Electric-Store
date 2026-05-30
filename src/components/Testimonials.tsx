@@ -116,10 +116,6 @@ export default function Testimonials() {
           width: max-content;
           animation: marqueeScrollRight 60s linear infinite;
         }
-        .marquee-container:hover .anim-marquee-left,
-        .marquee-container:hover .anim-marquee-right {
-          animation-play-state: paused;
-        }
       `}</style>
       
       {/* Decorative background visual elements */}

@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <p className="text-[12px] text-slate-500 font-sans leading-relaxed max-w-sm">
-            Serving Pakistan with premium solar and architectural lighting since 1968. 58 years of quality, reliability and client-centered trust based in Mailsi.
+            Serving Pakistan with premium electrical hardware, energy-saver BLDC fans, appliances, smart solar, and architectural lighting since 1968. 58 years of quality, reliability, and client-centered trust based in Mailsi.
           </p>
 
           {/* Social Row with colorful icons exact to image */}
@@ -59,7 +59,7 @@ export default function Footer() {
               <Instagram className="w-4 h-4 text-white" />
             </a>
             <a href="https://youtube.com" target="_blank" rel="noreferrer" className="w-8 h-8 rounded-full bg-[#CD201F] hover:opacity-90 flex items-center justify-center text-white" title="YouTube Channel">
-              <Youtube className="w-4 h-4 text-white fill-current animate-pulse" />
+              <Youtube className="w-4 h-4 text-white fill-current " />
             </a>
           </div>
 
@@ -72,10 +72,11 @@ export default function Footer() {
           </h4>
           <ul className="space-y-3 font-sans font-semibold text-slate-500">
             <li><button onClick={() => handleNavClick('home')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Home</button></li>
-            <li><button onClick={() => handleNavClick('solar')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Solar Systems</button></li>
-            <li><button onClick={() => handleNavClick('lighting')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Lighting</button></li>
+            <li><button onClick={() => handleNavClick('products', 'all')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">All Products Portfolio</button></li>
+            <li><button onClick={() => handleNavClick('products', 'electronics')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Electronics &amp; BLDC Fans</button></li>
+            <li><button onClick={() => handleNavClick('solar')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Solar Solutions</button></li>
+            <li><button onClick={() => handleNavClick('lighting')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Lighting &amp; Decor</button></li>
             <li><button onClick={() => handleNavClick('about')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">About Us</button></li>
-            <li><button onClick={() => handleNavClick('contact')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Contact Us</button></li>
           </ul>
         </div>
 

@@ -52,7 +52,7 @@ function MainContent() {
                       Selected Highlights
                     </span>
                     <h2 className="font-display font-black text-2xl sm:text-3xl text-slate-900 tracking-tight">
-                      Mailsi's Choice Energy Solutions
+                      Mailsi's Choice Electrical &amp; Energy Solutions
                     </h2>
                   </div>
                 </div>
@@ -60,29 +60,30 @@ function MainContent() {
               </div>
             </div>
 
-            {/* Concise Solar & Lighting preview card to route to details and make interface multi-perspective */}
+            {/* Concise Solar, Electronics & Lighting preview cards to route to details and make interface multi-perspective */}
             <div className="bg-[#FAF9F6] py-16 border-b border-slate-100">
-              <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-2 gap-8">
+              <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
                 
-                {/* Lighting option banner */}
-                <div className="p-8 bg-slate-900 text-white rounded-2xl relative overflow-hidden group shadow-md text-left">
-                  <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl pointer-events-none" />
+                {/* Home Electronics option banner */}
+                <div className="p-8 bg-[#0B2516] text-white rounded-2xl relative overflow-hidden group shadow-md text-left">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-emerald-500/10 rounded-full blur-2xl pointer-events-none" />
                   <div className="space-y-4">
-                    <span className="text-[10px] font-mono uppercase bg-white/10 text-[#F1C40F] font-bold px-2.5 py-1 rounded-full border border-white/5">
-                      Premium Interior
+                    <span className="text-[10px] font-mono uppercase bg-white/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-white/5">
+                      Premium Appliances
                     </span>
-                    <h3 className="font-display font-black text-xl tracking-tight">Architectural Smart Lighting</h3>
+                    <h3 className="font-display font-black text-xl tracking-tight">BLDC Fans &amp; Electronics</h3>
                     <p className="text-xs text-slate-300 leading-relaxed font-sans max-w-sm">
-                      Experience customized gold warm washes, ambient study highlights, and robust commercial lighting.
+                      Check energy-saving Royal ceiling fans, automatic servo stabilizers, and smart water pump controllers.
                     </p>
                     <button
                       onClick={() => {
-                        setCurrentView('lighting');
+                        setCurrentView('products');
+                        setSelectedCategory('electronics');
                         window.scrollTo({ top: 0, behavior: 'smooth' });
                       }}
-                      className="text-[#F1C40F] hover:text-white font-sans font-bold text-xs flex items-center gap-1 transition-colors cursor-pointer pt-2"
+                      className="text-emerald-400 hover:text-white font-sans font-bold text-xs flex items-center gap-1 transition-colors cursor-pointer pt-2"
                     >
-                      <span>Explore Premium Lighting</span>
+                      <span>Explore Premium Electronics</span>
                       <span>→</span>
                     </button>
                   </div>
@@ -107,6 +108,30 @@ function MainContent() {
                       className="text-cyan-400 hover:text-white font-sans font-bold text-xs flex items-center gap-1 transition-colors cursor-pointer pt-2"
                     >
                       <span>Explore Solar Panels</span>
+                      <span>→</span>
+                    </button>
+                  </div>
+                </div>
+
+                {/* Lighting option banner */}
+                <div className="p-8 bg-slate-900 text-white rounded-2xl relative overflow-hidden group shadow-md text-left">
+                  <div className="absolute top-0 right-0 w-32 h-32 bg-yellow-500/10 rounded-full blur-2xl pointer-events-none" />
+                  <div className="space-y-4">
+                    <span className="text-[10px] font-mono uppercase bg-white/10 text-[#F1C40F] font-bold px-2.5 py-1 rounded-full border border-white/5">
+                      Premium Interior
+                    </span>
+                    <h3 className="font-display font-black text-xl tracking-tight">Architectural Smart Lighting</h3>
+                    <p className="text-xs text-slate-300 leading-relaxed font-sans max-w-sm">
+                      Experience customized gold warm washes, ambient study highlights, and robust commercial lighting.
+                    </p>
+                    <button
+                      onClick={() => {
+                        setCurrentView('lighting');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      }}
+                      className="text-[#F1C40F] hover:text-white font-sans font-bold text-xs flex items-center gap-1 transition-colors cursor-pointer pt-2"
+                    >
+                      <span>Explore Premium Lighting</span>
                       <span>→</span>
                     </button>
                   </div>

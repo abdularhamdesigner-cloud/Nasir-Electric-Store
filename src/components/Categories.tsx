@@ -102,6 +102,29 @@ export default function Categories() {
             <circle cx="14" cy="14" r="1.5" fill="#F1C40F" />
           </svg>
         );
+      case 'electronics':
+        return (
+          <svg viewBox="0 0 48 48" className="w-13 h-13 text-slate-800 hover:rotate-180 transition-transform duration-700" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <circle cx="24" cy="24" r="5" strokeWidth="2" />
+            <path d="M24 19V6C24 4.5 25.5 3 27 3C28.5 3 28.5 5 28.5 6V19" strokeLinecap="round" />
+            <path d="M19 24H6C4.5 24 3 25.5 3 27C3 28.5 5 28.5 6 28.5H19" strokeLinecap="round" />
+            <path d="M24 29V42C24 43.5 22.5 45 21 45C19.5 45 19.5 43 19.5 42V29" strokeLinecap="round" />
+            <path d="M29 24H42C43.5 24 45 22.5 45 21C45 19.5 43 19.5 42 19.5H29" strokeLinecap="round" />
+          </svg>
+        );
+      case 'accessories':
+        return (
+          <svg viewBox="0 0 48 48" className="w-13 h-13 text-slate-800" fill="none" stroke="currentColor" strokeWidth="1.5">
+            <rect x="6" y="8" width="36" height="32" rx="4" />
+            <rect x="12" y="14" width="10" height="20" rx="1.5" />
+            <line x1="17" y1="14" x2="17" y2="34" strokeDasharray="1.5 1.5" />
+            <circle cx="17" cy="24" r="1.5" fill="currentColor" />
+            <rect x="26" y="14" width="10" height="20" rx="1.5" />
+            <circle cx="31" cy="20" r="1.5" fill="currentColor" />
+            <circle cx="29" cy="26" r="1" fill="currentColor" />
+            <circle cx="33" cy="26" r="1" fill="currentColor" />
+          </svg>
+        );
       default:
         return <Sun className="w-12 h-12 text-slate-800" />;
     }
@@ -112,8 +135,8 @@ export default function Categories() {
       <div className="max-w-7xl mx-auto px-6">
         
         {/* Row of clean category blocks exact to image */}
-        <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-7 gap-5">
-          {CATEGORIES.slice(0, 7).map((cat, idx) => {
+        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 lg:grid-cols-9 gap-4">
+          {CATEGORIES.map((cat, idx) => {
             const isActive = selectedCategory === cat.id;
             return (
               <motion.div

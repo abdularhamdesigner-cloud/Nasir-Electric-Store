@@ -6,37 +6,56 @@ import { ShieldCheck, Truck, Lock, Headphones, ChevronLeft, ChevronRight, ArrowR
 const SLIDES = [
   {
     id: 1,
-    tagline: "POWERING TODAY, ENERGIZING TOMORROW",
+    tagline: "ESTABLISHED SINCE 1968 — MAILSI, PUNJAB",
     title: (
       <>
-        Your One-Stop Store <br />
-        for <span className="text-[#F1C40F]">Solar & Electrical</span> <br />
-        Solutions
+        The Complete <span className="text-[#F1C40F]">Electrical, Solar &amp;</span> <br />
+        Electronics Centre
       </>
     ),
     subtitle: (
       <>
-        High quality products. Trusted service. <br />
-        Building a brighter and smarter future since 1968.
+        High-durability fans, pure copper wires, certified switchgear, <br />
+        and tier-1 smart renewable solar solutions. Serving generations with trust.
       </>
     ),
-    primaryBtnText: "Shop Catalog",
-    secondaryBtnText: "Explore Solar",
+    primaryBtnText: "Browse All Products",
+    secondaryBtnText: "Explore Solar Solutions",
     accentColor: "#F1C40F",
     actionType: "shop_catalog"
   },
   {
     id: 2,
-    tagline: "SMART ARCHITECTURAL LIGHTING",
+    tagline: "ENERGY SAVING HOME ELECTRONICS & FANS",
     title: (
       <>
-        Stunning <span className="text-cyan-400">Neon Ropes & Custom</span> <br />
+        Premium <span className="text-[#2ECC71]">BLDC Inverter Fans &amp;</span> <br />
+        Home Appliances
+      </>
+    ),
+    subtitle: (
+      <>
+        Shop high-performance Royal and GFC inverter-fans, water geysers, <br />
+        automatic servo voltage stabilizers, and digitized well controllers.
+      </>
+    ),
+    primaryBtnText: "View Home Electronics",
+    secondaryBtnText: "Go to Catalog",
+    accentColor: "#2ECC71",
+    actionType: "electronics"
+  },
+  {
+    id: 3,
+    tagline: "SMART ARCHITECTURAL LIGHTING & DECOR",
+    title: (
+      <>
+        Stunning <span className="text-cyan-400">Neon Ropes, Spotlights &amp;</span> <br />
         SMD LED Fixtures
       </>
     ),
     subtitle: (
       <>
-        Individually addressable pixel strings, cozy ceiling coves <br />
+        Individually addressable pixel strings, cozy ceiling coves, <br />
         and outdoor festive decoration setups for gorgeous warmth.
       </>
     ),
@@ -44,26 +63,6 @@ const SLIDES = [
     secondaryBtnText: "View Products",
     accentColor: "#06B6D4",
     actionType: "lighting"
-  },
-  {
-    id: 3,
-    tagline: "PREMIUM RENEWABLE PACKAGES",
-    title: (
-      <>
-        Tier-1 <span className="text-[#2ECC71]">Solar Assemblies & Heavy</span> <br />
-        Hybrid Inverters
-      </>
-    ),
-    subtitle: (
-      <>
-        Pair premium monocrystalline energy panels with anti-grid <br />
-        interruption smart battery solutions configured precisely.
-      </>
-    ),
-    primaryBtnText: "Configure Solar",
-    secondaryBtnText: "Shop Products",
-    accentColor: "#2ECC71",
-    actionType: "solar"
   }
 ];
 
@@ -100,6 +99,10 @@ export default function Hero() {
       handleExploreLighting();
     } else if (action === "solar") {
       handleExploreSolar();
+    } else if (action === "electronics") {
+      setCurrentView('products');
+      setSelectedCategory('electronics');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } else {
       handleShopNow();
     }

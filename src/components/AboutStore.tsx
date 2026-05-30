@@ -44,16 +44,19 @@ export default function AboutStore() {
 
             <div className="space-y-4 text-xs sm:text-sm text-slate-650 leading-relaxed font-semibold">
               <p>
-                In <strong className="text-slate-800 font-black">1968</strong>, the foundations of Nasir Electric Store (N.E.S) were laid in Mailsi, District Vehari by our founder, <strong className="text-slate-800 font-black">Mian Nasir Ud Din</strong>. At a time when electric grids were just expanding across Punjab, our store stood as a beacon of genuine parts, expert physical advice, and unparalleled commercial honesty. 
+                Nasir Electric Store has been serving customers with dedication, reliability, and trust since <strong className="text-slate-800 font-extrabold">1968</strong>. Founded by <strong className="text-slate-900 font-black">Chaudhry Muhammad Aslam</strong>, the business began as a small electrical store with a simple mission: to provide quality electrical products, honest service, and long-term value to the local community.
               </p>
               <p>
-                As years transitioned into decades, South Punjab experienced a massive technological shift, yet our cornerstone values remained unchanged. Under subsequent generations of the family, N.E.S adapted from classical switches and copper conduits to becoming an authorized partner of tier-1 solar manufacturers, heavy industrial cables, and luxury high-lux interior architectural lighting.
+                Through decades of hard work and commitment, Nasir Electric Store earned a strong reputation for supplying dependable electrical solutions and maintaining lasting relationships with customers. The foundation of the business was built on integrity, fair dealing, and customer satisfaction, values that continue to guide the company today.
               </p>
               <p>
-                Unlike standard trade resellers, N.E.S completely filters out second-standard replicas, cheap dual-standard terminal cables, and high-inflation middlemen. We deal directly with official brand channels like <strong className="text-slate-800 font-black">Jinko Solar, Fast Cables, Schneider Electric, and Osaka</strong>.
+                In 2002, <strong className="text-slate-900 font-black">Chaudhry Muhammad Usman</strong>, the son of Chaudhry Muhammad Aslam, joined the business and brought a new vision while preserving the principles established by his father. Under his leadership, Nasir Electric Store expanded its services, strengthened customer relationships, and adapted to the changing needs of the market while maintaining the same commitment to quality and trust.
               </p>
               <p>
-                Today, our showroom on <strong className="text-slate-800 font-black">Mitru Road</strong> remains the region's main supply hub, powering domestic houses, heavy mills, and automated tube-wells across Punjab.
+                Today, <strong className="text-slate-900 font-black">Chaudhry Muhammad Usman</strong> continues to successfully lead Nasir Electric Store, carrying forward a legacy that spans more than seven decades. The store has become a trusted name for customers seeking genuine products, professional guidance, and dependable service.
+              </p>
+              <p className="text-[11px] text-slate-500 italic font-medium">
+                For generations, Nasir Electric Store has remained committed to serving customers with honesty, quality, and dedication. What started as a small family business in 1950 has grown into a trusted name that continues to power homes, businesses, and communities with confidence.
               </p>
             </div>
 
@@ -93,7 +96,7 @@ export default function AboutStore() {
                 <span className="font-mono font-black text-[#EAA814] block text-[11px] mb-0.5">1968</span>
                 <h4 className="font-sans font-black text-slate-800 uppercase tracking-wide text-xs">The Mitru Road Genesis</h4>
                 <p className="text-slate-500 font-semibold leading-relaxed mt-1">
-                  Mian Nasir Ud Din opens Nasir Electric Store. Providing basic cables, imported lamps, and motor starters for agricultural pumps.
+                  Chaudhry Muhammad Aslam opens Nasir Electric Store. Providing basic cables, imported lamps, and motor starters for agricultural pumps.
                 </p>
               </div>
 
@@ -149,7 +152,7 @@ export default function AboutStore() {
             </div>
 
             <p className="text-slate-600 font-sans text-xs sm:text-sm font-semibold leading-relaxed">
-              To empower South Punjab with accessible, highly efficient energy solutions. We strive to purge the local market of low-durability copies, providing premium 99.9% pure copper, certified solar components, and luxury architectural lighting that guarantee safety, lower electricity bills, and secure financial payback.
+              To provide reliable electrical solutions, maintain the highest standards of customer satisfaction, and continue the legacy of trust established by our founder over 70 years ago.
             </p>
           </div>
 
@@ -167,7 +170,7 @@ export default function AboutStore() {
             </div>
 
             <p className="text-slate-300 font-sans text-xs sm:text-sm font-medium leading-relaxed">
-              To transform N.E.S into a fully independent renewable contractor, ensuring every domestic residence and agricultural tube-well in Punjab achieves absolute energy self-reliance. We envision a safer, beautifully illuminated landscape backed by reliable engineering and authentic local warranty systems.
+              To continue being a trusted and leading supplier of electrical products by combining traditional values with modern business practices, ensuring every customer receives quality products and exceptional service.
             </p>
           </div>
 
@@ -259,28 +262,35 @@ export default function AboutStore() {
         <div className="bg-[#FAF9F6] border border-slate-200 rounded-3xl p-6 sm:p-10 grid grid-cols-1 lg:grid-cols-12 gap-8 items-center text-left">
           
           <div className="lg:col-span-8 space-y-4">
-            <span className="text-[10px] font-mono text-slate-400 font-black uppercase tracking-widest block">
-              Direct physical authorization
+            <span className="text-[10px] font-mono text-[#EAA814] font-black uppercase tracking-widest block">
+              Built on Trust
             </span>
-            <h3 className="font-display font-black text-xl sm:text-3xl text-slate-900 tracking-tight uppercase leading-tight">
-              Why 25,000+ Customers Trust Nasir Electric Store (N.E.S)
+            <h3 className="font-display font-black text-xl sm:text-2xl text-slate-900 tracking-tight uppercase leading-tight">
+              Honesty, Quality, and Commitment
             </h3>
+            <p className="text-xs sm:text-sm text-slate-650 leading-relaxed font-semibold">
+              At Nasir Electric Store, trust is more than a business value. It is the foundation of everything we do. Over the years, generations of customers have returned to us because they know they can rely on our honesty, product quality, and commitment to customer satisfaction.
+            </p>
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 text-xs font-semibold text-slate-600 leading-relaxed mt-2">
               <div className="flex gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <p><strong className="text-slate-800">No Copy Cats:</strong> If a product is not 100% genuine, we do not inventory it. We prioritize safety over high-margin cheap items.</p>
+                <p><strong className="text-slate-800">Transparent & Fair:</strong> Transparent and fair business practices in every transaction.</p>
               </div>
               <div className="flex gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <p><strong className="text-slate-800">5-Min Local Claims:</strong> Handled physically inside our main showroom on Mitru Road under 5 minutes without calling distant middle factories.</p>
+                <p><strong className="text-slate-800">Genuine & Reliable:</strong> Sourcing only authentic, genuine, and reliable electrical products.</p>
               </div>
               <div className="flex gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <p><strong className="text-slate-800">Open Box Checking:</strong> Every bulb, panel and custom converter box is tested physically before courier dispatch.</p>
+                <p><strong className="text-slate-800">Long-Term Relationships:</strong> Cultivating long-term customer relationships that span decades.</p>
               </div>
               <div className="flex gap-2">
                 <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                <p><strong className="text-slate-800">Direct Dealer Rates:</strong> Regulated transparent margins that bypass trading agencies and retail brokers.</p>
+                <p><strong className="text-slate-800">Professional Support:</strong> Providing expert technical guidance and professional customer support.</p>
+              </div>
+              <div className="flex gap-2 sm:col-span-2">
+                <CheckCircle className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                <p><strong className="text-slate-800">Across Generations:</strong> Ensuring consistent service and durable power across multiple generations.</p>
               </div>
             </div>
           </div>
