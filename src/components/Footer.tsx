@@ -44,7 +44,7 @@ export default function Footer() {
           </div>
 
           <p className="text-[12px] text-slate-500 font-sans leading-relaxed max-w-sm">
-            Serving Pakistan with premium electrical hardware, energy-saver BLDC fans, appliances, smart solar, and architectural lighting since 1968. 58 years of quality, reliability, and client-centered trust based in Mailsi.
+            Serving Pakistan with premium electrical hardware, appliances, smart solar, smart electronics, and architectural lighting since 1968. 58 years of quality, reliability, and client-centered trust based in Mailsi.
           </p>
 
           {/* Social Row with colorful icons exact to image */}
@@ -73,7 +73,7 @@ export default function Footer() {
           <ul className="space-y-3 font-sans font-semibold text-slate-500">
             <li><button onClick={() => handleNavClick('home')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Home</button></li>
             <li><button onClick={() => handleNavClick('products', 'all')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">All Products Portfolio</button></li>
-            <li><button onClick={() => handleNavClick('products', 'electronics')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Electronics &amp; BLDC Fans</button></li>
+            <li><button onClick={() => handleNavClick('products', 'electronics')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Smart Electronics</button></li>
             <li><button onClick={() => handleNavClick('solar')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Solar Solutions</button></li>
             <li><button onClick={() => handleNavClick('lighting')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">Lighting &amp; Decor</button></li>
             <li><button onClick={() => handleNavClick('about')} className="hover:text-[#F39C12] transition-colors cursor-pointer block text-left">About Us</button></li>

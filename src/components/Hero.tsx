@@ -8,7 +8,7 @@ const DEFAULT_SLIDES = [
     id: 1,
     tagline: "ESTABLISHED SINCE 1968 — MAILSI, PUNJAB",
     title: "Complete Electrical, Solar & General Center",
-    subtitle: "High-durability inverter fans, copper cables, brand certified switches, and professional tier-1 smart on-grid solar energy systems.",
+    subtitle: "Premium indoor wiring solutions, copper cables, brand certified switches, and professional tier-1 smart on-grid solar energy systems.",
     primaryBtnText: "Browse All Products",
     secondaryBtnText: "Explore Solar",
     image: "https://i.ibb.co/s9LJh6C4/on-grid-solar-system-for-residential-use.jpg",
@@ -17,12 +17,12 @@ const DEFAULT_SLIDES = [
   },
   {
     id: 2,
-    tagline: "ENERGY SAVING SMART HOME APPLIANCES",
-    title: "Premium BLDC Inverter Fans & Safety Stabilizers",
-    subtitle: "Saves up to 60% electricity. Premium Royal & GFC copper BLDC fans, automatic microprocessor stabilizers, and intelligent well switches.",
+    tagline: "SMART ENERGY MANAGEMENT & CONTROLS",
+    title: "Automatic Controllers & Premium Geysers",
+    subtitle: "Fully automate water pump levels, monitor terminal load limits, schedule timers, and buy high-efficiency dual-fuel and instant geysers.",
     primaryBtnText: "View Electronics",
-    secondaryBtnText: "Shop Fans",
-    image: "https://images.unsplash.com/photo-1527018601619-a508a2be00cd?q=80&w=800&auto=format&fit=crop",
+    secondaryBtnText: "Smart Devices",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=800&auto=format&fit=crop",
     accentColor: "#2ECC71", // Safe energy emerald
     bgTone: "#051324" // Dark navy slate
   },

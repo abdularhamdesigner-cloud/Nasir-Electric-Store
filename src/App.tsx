@@ -72,9 +72,9 @@ function MainContent() {
                     <span className="text-[10px] font-mono uppercase bg-white/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-white/5">
                       Premium Appliances
                     </span>
-                    <h3 className="font-display font-black text-xl tracking-tight">BLDC Fans &amp; Electronics</h3>
+                    <h3 className="font-display font-black text-xl tracking-tight">Smart Electronics &amp; Geysers</h3>
                     <p className="text-xs text-slate-300 leading-relaxed font-sans max-w-sm">
-                      Check energy-saving Royal ceiling fans, automatic servo stabilizers, and smart water pump controllers.
+                      Browse digital smart voltage protectors, Wi-Fi multi-timers, water pump controllers, and dual-system geysers.
                     </p>
                     <button
                       onClick={() => {

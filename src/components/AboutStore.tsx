@@ -42,22 +42,98 @@ export default function AboutStore() {
               </h2>
             </div>
 
-            <div className="space-y-4 text-xs sm:text-sm text-slate-650 leading-relaxed font-semibold">
-              <p>
-                Nasir Electric Store has been serving customers with dedication, reliability, and trust since <strong className="text-slate-800 font-extrabold">1968</strong>. Founded by <strong className="text-slate-900 font-black">Chaudhry Muhammad Aslam</strong>, the business began as a small electrical store with a simple mission: to provide quality electrical products, honest service, and long-term value to the local community.
-              </p>
-              <p>
-                Through decades of hard work and commitment, Nasir Electric Store earned a strong reputation for supplying dependable electrical solutions and maintaining lasting relationships with customers. The foundation of the business was built on integrity, fair dealing, and customer satisfaction, values that continue to guide the company today.
-              </p>
-              <p>
-                In 2002, <strong className="text-slate-900 font-black">Chaudhry Muhammad Usman</strong>, the son of Chaudhry Muhammad Aslam, joined the business and brought a new vision while preserving the principles established by his father. Under his leadership, Nasir Electric Store expanded its services, strengthened customer relationships, and adapted to the changing needs of the market while maintaining the same commitment to quality and trust.
-              </p>
-              <p>
-                Today, <strong className="text-slate-900 font-black">Chaudhry Muhammad Usman</strong> continues to successfully lead Nasir Electric Store, carrying forward a legacy that spans more than seven decades. The store has become a trusted name for customers seeking genuine products, professional guidance, and dependable service.
-              </p>
-              <p className="text-[11px] text-slate-500 italic font-medium">
-                For generations, Nasir Electric Store has remained committed to serving customers with honesty, quality, and dedication. What started as a small family business in 1950 has grown into a trusted name that continues to power homes, businesses, and communities with confidence.
-              </p>
+            <div className="space-y-6">
+              
+              {/* Profile Card 1: Chaudhry Muhammad Aslam (Founder) */}
+              <div id="founder-aslam-profile" className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-left">
+                  
+                  {/* Title Header rows */}
+                  <div className="space-y-0.5 mb-3 border-b border-slate-100 pb-2">
+                    <span className="text-[9px] font-mono text-[#EAA814] font-black uppercase tracking-widest block">The Legacy Founder</span>
+                    <h4 className="font-display font-black text-lg text-slate-900 uppercase tracking-tight">
+                      <span className="bg-[#F1C40F]/15 px-2.5 py-1 rounded-lg border-l-3 border-[#EAA814] inline-block">
+                        Chaudhry Muhammad Aslam
+                      </span>
+                    </h4>
+                    <p className="text-[11px] text-slate-450 font-extrabold uppercase tracking-widest mt-1">Founder (Est. 1968)</p>
+                  </div>
+
+                  <div className="flow-root">
+                    {/* Photo Space on the Right Side - Floated so paragraph text starts exactly next to it on the left and wraps nicely */}
+                    <div className="float-right ml-4 mb-2 w-28 md:w-36 h-36 md:h-44 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 hover:border-[#EAA814] relative shadow-inner group transition-all duration-300">
+                      <img
+                        src="https://i.ibb.co/xtNq7x54/image.png" 
+                        alt="Chaudhry Muhammad Aslam"
+                        className="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-105 group-hover:contrast-105"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2">
+                        <span className="text-[9px] text-white font-mono uppercase bg-[#EAA814]/90 py-1 px-2.5 rounded font-black tracking-widest shadow-sm">
+                          Founder
+                        </span>
+                      </div>
+                      <div className="absolute bottom-2 left-2 bg-slate-900/90 text-[#F1C40F] text-[8px] font-mono uppercase font-black px-2 py-0.5 rounded shadow-sm border border-white/5 transition-opacity duration-350 group-hover:opacity-0">
+                        Founder
+                      </div>
+                    </div>
+
+                    <p className="text-xs sm:text-[13px] text-slate-650 leading-relaxed font-semibold mb-2">
+                      Nasir Electric Store has been serving customers with dedication, reliability, and trust since <strong className="text-slate-800 font-extrabold">1968</strong>. Founded by <strong className="bg-[#F1C40F]/15 border-b border-[#EAA814]/30 text-slate-950 px-1.5 py-0.5 rounded font-black">Chaudhry Muhammad Aslam</strong>, the business began as a small electrical store with a simple mission: to provide quality electrical products, honest service, and long-term value to the local community.
+                    </p>
+                    <p className="text-xs sm:text-[13px] text-slate-650 leading-relaxed font-semibold">
+                      Through decades of hard work and commitment, he earned a strong reputation for supplying dependable copper cabling and maintaining lasting relations.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
+              {/* Profile Card 2: Chaudhry Muhammad Usman (Leader / Managing Director) */}
+              <div id="director-usman-profile" className="bg-white border border-slate-200 rounded-2xl p-5 shadow-sm hover:shadow-md transition-all duration-300">
+                <div className="text-left">
+                  
+                  {/* Title Header rows */}
+                  <div className="space-y-0.5 mb-3 border-b border-slate-100 pb-2">
+                    <span className="text-[9px] font-mono text-[#EAA814] font-black uppercase tracking-widest block">Present Leadership</span>
+                    <h4 className="font-display font-black text-lg text-slate-900 uppercase tracking-tight">
+                      <span className="bg-[#F1C40F]/15 px-2.5 py-1 rounded-lg border-l-3 border-[#EAA814] inline-block">
+                        Chaudhry Muhammad Usman
+                      </span>
+                    </h4>
+                    <p className="text-[11px] text-slate-450 font-extrabold uppercase tracking-widest mt-1">Managing Director</p>
+                  </div>
+
+                  <div className="flow-root">
+                    {/* Photo Space on the Right Side - Floated so paragraph text starts exactly next to it on the left and wraps nicely */}
+                    <div className="float-right ml-4 mb-2 w-28 md:w-36 h-36 md:h-44 rounded-xl overflow-hidden bg-slate-100 border border-slate-200 hover:border-[#EAA814] relative shadow-inner group transition-all duration-300">
+                      <img
+                        src="https://i.ibb.co/svFZPy1K/Whats-App-Image-2026-05-30-at-22-13-56.jpg" 
+                        alt="Chaudhry Muhammad Usman"
+                        className="w-full h-full object-cover object-center transition-all duration-500 ease-out group-hover:scale-110 group-hover:brightness-105 group-hover:contrast-105"
+                        referrerPolicy="no-referrer"
+                      />
+                      <div className="absolute inset-0 bg-gradient-to-t from-slate-950/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-end justify-center pb-2">
+                        <span className="text-[9px] text-white font-mono uppercase bg-[#EAA814]/90 py-1 px-2.5 rounded font-black tracking-widest shadow-sm">
+                          Director
+                        </span>
+                      </div>
+                      <div className="absolute bottom-2 left-2 bg-slate-900/90 text-[#F1C40F] text-[8px] font-mono uppercase font-black px-2 py-0.5 rounded shadow-sm border border-white/5 transition-opacity duration-350 group-hover:opacity-0">
+                        Director
+                      </div>
+                    </div>
+
+                    <p className="text-xs sm:text-[13px] text-slate-650 leading-relaxed font-semibold mb-2">
+                      In 2002, <strong className="bg-[#F1C40F]/15 border-b border-[#EAA814]/30 text-slate-950 px-1.5 py-0.5 rounded font-black font-black">Chaudhry Muhammad Usman</strong>, the son of <strong className="text-slate-800 font-extrabold">Chaudhry Muhammad Aslam</strong>, joined the store and brought a modern vision while preserving the core values established by his father. Under his leadership, Nasir Electric Store expanded services and adapter solutions.
+                    </p>
+                    <p className="text-xs sm:text-[13px] text-slate-650 leading-relaxed font-semibold">
+                      Today, he continues to lead with unparalleled excellence, scaling solar contracting and premium architectural fittings with high integrity.
+                    </p>
+                  </div>
+
+                </div>
+              </div>
+
             </div>
 
             {/* Micro badges */}
