@@ -181,20 +181,28 @@ export default function SolarSolutions() {
             </button>
           </div>
 
-          {/* Right graphics backdrop with illustration and lightning sticker */}
-          <div className="relative w-full md:w-[48%] h-[180px] sm:h-[220px] flex items-center justify-center z-10 shrink-0">
-            {/* Elegant Modern Home Silhouette */}
-            <div className="absolute inset-0 rounded-xl overflow-hidden bg-slate-900 border border-slate-800 shadow-xl opacity-90">
+          {/* Right graphics backdrop with actual premium on-grid residential solar photo styled as a clean background-removed PNG cutout */}
+          <div className="relative w-full md:w-[48%] h-[200px] sm:h-[260px] flex items-center justify-center z-10 shrink-0 select-none">
+            {/* Elegant transparent floating cutout representation (sky removed using masterclass shape polygon) */}
+            <div 
+              className="absolute inset-0 transition-transform hover:scale-[1.03] duration-500 ease-out"
+              style={{
+                filter: 'drop-shadow(0 20px 25px rgba(0,0,0,0.15)) drop-shadow(0 8px 10px rgba(0,0,0,0.1))',
+              }}
+            >
               <img
-                src="/src/assets/images/hero_solar_house_1779880922340.png"
-                alt="Solar Architecture"
-                className="w-full h-full object-cover opacity-65 scale-105"
+                src="https://i.ibb.co/s9LJh6C4/on-grid-solar-system-for-residential-use.jpg"
+                alt="On-grid Solar System for Residential Use Cutout"
+                className="w-full h-full object-cover transition-transform duration-700"
+                style={{
+                  clipPath: 'polygon(0% 45%, 48% 12%, 100% 32%, 100% 90%, 82% 100%, 0% 100%)',
+                }}
                 referrerPolicy="no-referrer"
               />
             </div>
             
             {/* Sun sticker symbol of lightning badge strictly corresponding to photo */}
-            <div className="absolute bottom-4 right-4 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg border border-slate-50">
+            <div className="absolute -bottom-2 -right-2 sm:bottom-4 sm:right-4 w-12 h-12 rounded-xl bg-white flex items-center justify-center shadow-lg border-2 border-[#EAA814]/40 z-20">
               <Zap className="w-6 h-6 text-[#F1C40F] fill-[#F1C40F]" />
             </div>
           </div>
@@ -246,7 +254,7 @@ export default function SolarSolutions() {
           </div>
 
           {/* Products Grid */}
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 sm:gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 lg:gap-8">
             {solarAndMaterialProducts.map((product) => {
               // Custom category badges formatting
               const specBadgeText = 
@@ -258,7 +266,7 @@ export default function SolarSolutions() {
               return (
                 <div
                   key={product.id}
-                  className="bg-white rounded-2xl border border-slate-100 hover:border-yellow-500/20 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full text-left overflow-hidden group"
+                  className="bg-white rounded-2xl border-2 border-slate-200/95 hover:border-[#EAA814]/40 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col h-full text-left overflow-hidden group"
                 >
                   {/* Image & Badge Overlay */}
                   <div className="relative aspect-video w-full bg-slate-50 overflow-hidden flex items-center justify-center">

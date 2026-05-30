@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Product } from '../types';
 import { useApp } from '../context/AppContext';
-import { Star, Eye, ShieldAlert, Milestone, BatteryCharging, Sun, Cpu, Lightbulb, Sparkles, Plug } from 'lucide-react';
+import { Sun, Cpu, BatteryCharging, ShieldAlert, Milestone, Lightbulb, Sparkles, Plug } from 'lucide-react';
 import { motion } from 'motion/react';
 
 interface ProductCardProps {
@@ -10,45 +10,30 @@ interface ProductCardProps {
 }
 
 export default function ProductCard({ product }: ProductCardProps) {
-  const { addToCart, clearCart, setIsInquiryOpen, setActiveProductDetail } = useApp();
+  const { setActiveProductDetail } = useApp();
   const [imageError, setImageError] = useState(false);
 
   useEffect(() => {
     setImageError(false);
   }, [product.image]);
 
-  // Helper to format currency
-  const formatPKR = (num: number) => {
-    return new Intl.NumberFormat('en-PK', {
-      style: 'currency',
-      currency: 'PKR',
-      minimumFractionDigits: 0,
-      maximumFractionDigits: 0,
-    }).format(num);
+  // Dynamic precise currency text formatter match to user representation
+  const formatPKRVal = (num: number) => {
+    const formatted = num.toLocaleString('en-US', {
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2,
+    });
+    return `Rs.${formatted} PKR`;
   };
 
-  // Badge Color Mapper perfectly corresponding to photo style
-  const getBadgeStyle = (badge: string) => {
-    const b = badge.toLowerCase();
-    if (b.includes('new')) {
-      return 'bg-[#2ECC71] text-white'; // Green
-    }
-    if (b.includes('best') || b.includes('heavy') || b.includes('premium')) {
-      return 'bg-[#3498DB] text-white'; // Blue
-    }
-    if (b.includes('sale')) {
-      return 'bg-[#E74C3C] text-white'; // Red
-    }
-    return 'bg-[#F39C12] text-white'; // Gold/Yellow
-  };
-
-  const handleInquireNow = (e: React.MouseEvent) => {
-    e.stopPropagation();
-    setActiveProductDetail(product);
-  };
+  // Compute exact discount percentage dynamically based on actual prices
+  let discountPercent = 0;
+  if (product.originalPrice && product.originalPrice > product.price) {
+    discountPercent = Math.round(((product.originalPrice - product.price) / product.originalPrice) * 100);
+  }
 
   const renderCategoryIcon = () => {
-    const sizeClass = "w-8 h-8 sm:w-12 sm:h-12";
+    const sizeClass = "w-10 h-10 text-slate-400";
     switch (product.category) {
       case 'solar':
         return <Sun className={`${sizeClass} text-[#F1C40F]`} />;
@@ -67,114 +52,97 @@ export default function ProductCard({ product }: ProductCardProps) {
       case 'accessories':
         return <Plug className={`${sizeClass} text-[#7f8c8d]`} />;
       default:
-        return <Cpu className={`${sizeClass} text-slate-400`} />;
+        return <Cpu className={`${sizeClass}`} />;
     }
   };
 
   return (
     <motion.div
-      initial={{ opacity: 0, y: 15 }}
+      initial={{ opacity: 0, y: 10 }}
       animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.3, ease: 'easeOut' }}
-      whileHover={{ y: -6, boxShadow: '0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.05)' }}
-      className="bg-white border border-slate-150 rounded-xl overflow-hidden p-3 sm:p-4 flex flex-col justify-between transition-all duration-300 h-full relative group"
+      transition={{ duration: 0.25, ease: 'easeOut' }}
+      whileHover={{ y: -4 }}
+      onClick={() => setActiveProductDetail(product)}
+      className="bg-white rounded-2xl p-3 sm:p-3.5 flex flex-col justify-between transition-all duration-200 h-full relative cursor-pointer group border-2 border-slate-200/90 shadow-sm hover:shadow-md hover:border-[#EAA814]/40"
     >
-      
-      {/* Top Graphic Elements - Badges & Image */}
-      <div className="relative w-full aspect-square bg-[#FAF9F6] rounded-lg flex items-center justify-center p-2 sm:p-4 mb-2 sm:mb-4 border border-slate-100 overflow-hidden">
+      {/* Product Image Stage with precise alignment */}
+      <div className="relative w-full aspect-[4/3] rounded-lg flex items-center justify-center overflow-hidden bg-[#FBFBFA] border border-slate-100">
         
-        {/* Left Side Label Bag */}
-        {product.badge && (
-          <div className="absolute top-2 left-2 sm:top-2.5 sm:left-2.5 z-10">
-            <span className={`text-[8px] sm:text-[10px] font-sans font-black uppercase tracking-widest px-1.5 py-0.5 sm:px-2.5 sm:py-1 rounded-md shadow-sm ${getBadgeStyle(product.badge)}`}>
+        {/* Crisp Rust-Orange Percentage Badge in the image corner exactly like mockup */}
+        {discountPercent > 0 ? (
+          <div className="absolute top-2.5 left-2.5 z-10">
+            <span className="bg-[#C83F11] text-white text-[10px] sm:text-[11px] font-black tracking-wide px-3 py-1 rounded-full shadow-xs">
+              -{discountPercent}%
+            </span>
+          </div>
+        ) : product.badge ? (
+          <div className="absolute top-2.5 left-2.5 z-10">
+            <span className="bg-[#C83F11] text-white text-[9px] sm:text-[10px] font-black tracking-wide px-2.5 py-0.8 rounded-full shadow-xs">
               {product.badge}
             </span>
           </div>
-        )}
+        ) : null}
 
-        {/* Product Image on clean container */}
+        {/* Scaled & perfectly fitting brand images */}
         {!imageError ? (
           <img
             src={product.image}
             alt={product.name}
             onError={() => setImageError(true)}
-            className="max-h-[90px] sm:max-h-[140px] max-w-full object-contain transform group-hover:scale-110 transition-transform duration-300 z-0 p-1"
+            className="w-full h-full object-contain p-2 transform group-hover:scale-105 transition-transform duration-300"
             referrerPolicy="no-referrer"
           />
         ) : (
-          <div className="flex flex-col items-center justify-center text-center p-2 space-y-1.5 h-full w-full">
-            <div className="p-2 sm:p-3 rounded-full bg-slate-50 border border-slate-100 shadow-inner flex items-center justify-center">
+          <div className="flex flex-col items-center justify-center p-4 text-center h-full w-full">
+            <div className="p-3 bg-slate-50 border border-slate-100 rounded-full mb-1">
               {renderCategoryIcon()}
             </div>
-            <span className="text-[8px] sm:text-[9px] text-slate-400 font-mono font-bold uppercase tracking-wider">
-              {product.category.replace('-', ' ')}
+            <span className="text-[9px] text-[#8C9BA5] font-semibold uppercase tracking-wider">
+              {product.category}
             </span>
           </div>
         )}
-
       </div>
 
-      {/* Title & Specs */}
-      <div className="space-y-1.5 sm:space-y-2 flex-1 flex flex-col justify-between">
-        <div className="space-y-0.5 sm:space-y-1">
-          {/* Subtitle Category metadata */}
-          <span className="text-[8px] sm:text-[9px] font-mono text-slate-400 uppercase tracking-widest block text-left font-bold">
-            {product.category.replace('-', ' ')}
-          </span>
-
-          {/* Bold Name */}
-          <h3 
-            onClick={() => setActiveProductDetail(product)}
-            className="font-sans font-extrabold text-[11px] sm:text-sm text-[#1E293B] hover:text-[#EAA814] cursor-pointer text-left leading-tight sm:leading-normal line-clamp-2 min-h-[32px] sm:min-h-[40px] transition-colors"
-          >
+      {/* Details layout: perfectly matched to mockup heights */}
+      <div className="pt-2.5 pb-0 flex flex-col text-left space-y-1 flex-1 justify-between">
+        <div>
+          {/* Responsive font title */}
+          <h3 className="font-sans font-bold text-slate-800 text-[13px] sm:text-[15px] hover:text-[#EAA814] leading-normal line-clamp-1 transition-colors">
             {product.name}
           </h3>
-        </div>
 
-        {/* Price layout */}
-        <div className="py-1 sm:py-2 flex items-baseline gap-1.5 sm:gap-2 text-left">
+          {/* Current price styled with robust crimson font weight */}
+          <div className="font-sans font-black text-[14px] sm:text-[17px] text-[#C83F11] tracking-tight leading-none pt-1">
+            {formatPKRVal(product.price)}
+          </div>
+
+          {/* Original price below with strikethrough */}
           {product.originalPrice && product.originalPrice > product.price ? (
-            <div className="flex flex-wrap items-baseline gap-1 sm:gap-2">
-              <span className="text-[10px] sm:text-xs text-slate-400 line-through">
-                {formatPKR(product.originalPrice)}
-              </span>
-              <span className="font-sans font-black text-xs sm:text-base text-[#E74C3C]">
-                {formatPKR(product.price)}
-              </span>
+            <div className="text-[11px] sm:text-[13px] text-[#8C9BA5] line-through font-semibold leading-none pt-0.5">
+              {formatPKRVal(product.originalPrice)}
             </div>
           ) : (
-            <span className="font-sans font-black text-xs sm:text-base text-[#1E293B]">
-              {formatPKR(product.price)}
-            </span>
+            <div className="text-[11px] sm:text-[13px] text-transparent leading-none select-none pt-0.5">
+              &nbsp;
+            </div>
           )}
         </div>
 
-        {/* Action Tray at bottom: Custom Quotation Inquiry focus */}
-        <div className="grid grid-cols-4 gap-1.5 sm:gap-2 pt-2 sm:pt-3 border-t border-slate-100">
-          
-          {/* Inquire Now */}
+        {/* Highly Polished Interactive Premium Action Button */}
+        <div className="pt-2">
           <button
-            onClick={handleInquireNow}
-            className="col-span-3 h-8 sm:h-10 bg-[#F1C40F] hover:bg-[#EAA814] text-[#1E293B] font-sans font-black text-[10px] sm:text-xs tracking-wider uppercase rounded-lg flex items-center justify-center gap-1 transition-colors active:scale-95 cursor-pointer shadow-sm hover:shadow-md"
-            title="Request sales quotation"
+            onClick={(e) => {
+              e.stopPropagation();
+              setActiveProductDetail(product);
+            }}
+            className="w-full py-1.5 sm:py-2 bg-[#F1C40F] hover:bg-[#EAA814] text-slate-950 font-sans font-black text-[10px] sm:text-xs tracking-wider uppercase rounded-md flex items-center justify-center gap-1 transition-colors active:scale-95 cursor-pointer shadow-xs hover:shadow-sm"
           >
-            <span className="hidden sm:inline">Inquire Now</span>
-            <span className="sm:hidden">Inquire</span>
-            <span className="text-[10px] sm:text-sm">→</span>
+            <span>Inquire Now</span>
+            <span className="text-[10px] sm:text-xs font-black">→</span>
           </button>
-
-          {/* Eye Detail Button (Specs/Technical sheet) */}
-          <button
-            onClick={() => setActiveProductDetail(product)}
-            className="col-span-1 h-8 sm:h-10 bg-[#FAF9F6] border border-slate-200 hover:bg-slate-50 text-slate-500 hover:text-slate-800 transition-colors rounded-lg flex items-center justify-center active:scale-95 cursor-pointer"
-            title="View technical datasheet"
-          >
-            <Eye className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
-          </button>
-
         </div>
       </div>
-
     </motion.div>
   );
 }

@@ -77,7 +77,7 @@ export default function ProductSection({ isFeaturedOnly = false }: ProductSectio
         <div className="relative">
           
           {displayProducts.length > 0 ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-3 sm:gap-6">
+            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-3 sm:gap-4 md:gap-5 lg:gap-6">
               {displayProducts.map((prod) => (
                 <ProductCard key={prod.id} product={prod} />
               ))}

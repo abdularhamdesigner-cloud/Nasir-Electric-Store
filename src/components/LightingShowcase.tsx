@@ -77,11 +77,11 @@ export default function LightingShowcase() {
         </div>
 
         {/* Product Grid strictly designed to look highly polished */}
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 lg:gap-8">
           {filteredProducts.map((product) => (
             <div
               key={product.id}
-              className="bg-[#0b1b30] rounded-2xl border border-white/5 hover:border-[#F1C40F]/35 shadow-xl transition-all duration-300 flex flex-col h-full text-left overflow-hidden group hover:shadow-[0_0_20px_rgba(241,196,15,0.05)]"
+              className="bg-[#0b1b30] rounded-2xl border-2 border-white/10 hover:border-[#F1C40F]/35 shadow-xl transition-all duration-300 flex flex-col h-full text-left overflow-hidden group hover:shadow-[0_0_20px_rgba(241,196,15,0.05)]"
             >
               {/* Photo & Badge Overlays */}
               <div className="relative aspect-video w-full bg-slate-900 overflow-hidden flex items-center justify-center">

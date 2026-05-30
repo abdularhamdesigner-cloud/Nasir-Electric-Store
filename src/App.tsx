@@ -9,6 +9,7 @@ import InquiryModal from './components/InquiryModal';
 import ProductDetailPage from './components/ProductDetailPage';
 import AboutStore from './components/AboutStore';
 import Footer from './components/Footer';
+import ScrollToTop from './components/ScrollToTop';
 import { motion, AnimatePresence } from 'motion/react';
 import { MapPin, Phone, Clock, ArrowRight, ExternalLink, Mail, MessageSquare } from 'lucide-react';
 
@@ -533,6 +534,9 @@ export default function App() {
 
         {/* Cart/Inquiry confirmation Drawer modal */}
         <InquiryModal />
+
+        {/* Floating Scroll To Top Interactive Button matching user styling and progress indicator */}
+        <ScrollToTop />
 
         {/* Deep, professional corporate Footer exact to directory specs */}
         <Footer />
