@@ -14,7 +14,7 @@ interface Appliance {
 export default function SolarSolutions() {
   const { addToCart, clearCart, setIsInquiryOpen, setActiveProductDetail } = useApp();
   const [appliances, setAppliances] = useState<Appliance[]>([
-    { id: 'fans', name: 'Ceiling Fans', watts: 75, qty: 5, label: '75W energy saver fan' },
+    { id: 'fans', name: 'Ceiling Fans & Coolers', watts: 75, qty: 5, label: '75W energy saver fan/cooler' },
     { id: 'ac', name: 'Inverter Air Conditioners (1.5 Ton)', watts: 1400, qty: 1, label: 'Modern eco inverter AC' },
     { id: 'leds', name: 'LED Ceiling Lights / Bulbs', watts: 12, qty: 15, label: '12W SMD downlight' },
     { id: 'fridge', name: 'Refrigerator / Freezer', watts: 350, qty: 1, label: 'Digital inverter fridge' },

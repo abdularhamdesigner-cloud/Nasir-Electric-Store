@@ -72,9 +72,9 @@ function MainContent() {
                     <span className="text-[10px] font-mono uppercase bg-white/10 text-emerald-400 font-bold px-2.5 py-1 rounded-full border border-white/5">
                       Premium Appliances
                     </span>
-                    <h3 className="font-display font-black text-xl tracking-tight">Smart Electronics &amp; Geysers</h3>
+                    <h3 className="font-display font-black text-xl tracking-tight">Coolers &amp; BLDC Fans</h3>
                     <p className="text-xs text-slate-300 leading-relaxed font-sans max-w-sm">
-                      Browse digital smart voltage protectors, Wi-Fi multi-timers, water pump controllers, and dual-system geysers.
+                      Check energy-saving BLDC inverter ceiling fans, pedestal fans, and heavy duty honeycomb desert air coolers.
                     </p>
                     <button
                       onClick={() => {

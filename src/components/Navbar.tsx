@@ -21,7 +21,7 @@ const sidebarCategories = [
   { id: 'solar', name: 'Solar Solutions', icon: Sun, color: '#F1C40F' },
   { id: 'inverters', name: 'Inverters & UPS', icon: Cpu, color: '#3498DB' },
   { id: 'batteries', name: 'Batteries & Storage', icon: BatteryCharging, color: '#2ECC71' },
-  { id: 'electronics', name: 'Smart Electronics', icon: Cpu, color: '#E67E22' },
+  { id: 'electronics', name: 'Coolers & Fans', icon: Wind, color: '#E67E22' },
   { id: 'wires', name: 'Wires & Cables', icon: Milestone, color: '#9B59B6' },
   { id: 'breakers', name: 'Electrical Components', icon: ShieldAlert, color: '#E74C3C' },
   { id: 'lighting', name: 'Outdoor & Spotlights', icon: Lightbulb, color: '#1ABC9C' },
